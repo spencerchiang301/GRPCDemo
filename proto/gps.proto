@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package ="gps/proto";
+
+service MyGps{
+  rpc GetMyAddress (Address) returns (MyPoint) {}
+}
+
+message Address{
+  string addr = 1;
+}
+
+message GetAddress{
+  string message = 1;
+}
+
+message Point{
+  double p1 = 1;
+  double p2 = 2;
+}
+
+message MyPoint{
+  string addr = 1;
+  Point location = 2;
+}
